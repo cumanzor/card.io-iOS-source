@@ -361,7 +361,7 @@
 #define DESCRIBE_BOOL(property) (self.property ? "; " #property : "")
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"{delegate: %@; %s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s}"
+  return [NSString stringWithFormat:@"{delegate: %@; %s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s}"
           ,self.paymentDelegate
           ,DESCRIBE_BOOL(keepStatusBarStyleForCardIO)
           ,DESCRIBE_BOOL(disableBlurWhenBackgrounding)
@@ -378,6 +378,7 @@
           ,DESCRIBE_BOOL(disableManualEntryButtons)
           ,DESCRIBE_BOOL(allowFreelyRotatingCardGuide)
           ,DESCRIBE_BOOL(hideCardIOLogo)
+          ,DESCRIBE_BOOL(useFrontCamera)
           ,(self.detectionMode == CardIODetectionModeCardImageAndNumber
             ? "DetectNumber"
             : (self.detectionMode == CardIODetectionModeCardImageOnly
@@ -430,6 +431,8 @@ CONTEXT_PASSTHROUGH_READWRITE(BOOL, hideCardIOLogo, HideCardIOLogo)
 CONTEXT_PASSTHROUGH_READWRITE(UIView *, scanOverlayView, ScanOverlayView)
 
 CONTEXT_PASSTHROUGH_READWRITE(CardIODetectionMode, detectionMode, DetectionMode)
+
+CONTEXT_PASSTHROUGH_READWRITE(BOOL, useFrontCamera, UseFrontCamera)
 
 #if CARDIO_DEBUG
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, doABTesting, DoABTesting)

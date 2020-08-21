@@ -151,6 +151,7 @@ NSString * const CardIOScanningOrientationAnimationDuration = @"CardIOScanningOr
     self.scanHasBeenStarted = YES;
     
     CardIOLog(@"Creating cameraView");
+    
     self.cameraView = [[CardIOCameraView alloc] initWithFrame:CGRectZeroWithSize(self.frame.size)
                                                      delegate:self
                                                        config:self.config];
@@ -339,6 +340,9 @@ CONFIG_PASSTHROUGH_READWRITE(BOOL, scanExpiry, ScanExpiry)
 CONFIG_PASSTHROUGH_READWRITE(UIView *, scanOverlayView, ScanOverlayView)
 
 CONFIG_PASSTHROUGH_READWRITE(CardIODetectionMode, detectionMode, DetectionMode)
+
+// add option to use front camera
+CONFIG_PASSTHROUGH_READWRITE(BOOL, useFrontCamera, UseFrontCamera)
 
 @end
 

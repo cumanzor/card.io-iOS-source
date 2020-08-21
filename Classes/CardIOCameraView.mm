@@ -83,8 +83,9 @@
 
     _delegate = delegate;
     _config = config;
-
-    _videoStream = [[CardIOVideoStream alloc] init];
+    
+    _videoStream = [[CardIOVideoStream alloc] initWithFrontCamera:config.useFrontCamera];
+    
     self.videoStream.config = config;
     self.videoStream.delegate = self;
     self.videoStream.previewLayer.needsDisplayOnBoundsChange = YES;

@@ -49,5 +49,6 @@
 @property(nonatomic, assign, readwrite) CardIODetectionMode detectionMode;
 
 @property(nonatomic, assign, readwrite) BOOL scanExpiry;
+@property(nonatomic, assign, readwrite) BOOL useFrontCamera;
 
 @end

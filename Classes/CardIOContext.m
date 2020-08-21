@@ -47,5 +47,6 @@ CONFIG_PASSTHROUGH_READWRITE(UIView *, scanOverlayView, ScanOverlayView)
 CONFIG_PASSTHROUGH_READWRITE(CardIODetectionMode, detectionMode, DetectionMode)
 
 CONFIG_PASSTHROUGH_READWRITE(BOOL, scanExpiry, ScanExpiry)
+CONFIG_PASSTHROUGH_READWRITE(BOOL, useFrontCamera, UseFrontCamera)
 
 @end

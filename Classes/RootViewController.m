@@ -27,6 +27,7 @@
 @property(nonatomic, strong, readwrite) IBOutlet UISwitch *cvvSwitch;
 @property(nonatomic, strong, readwrite) IBOutlet UISwitch *zipSwitch;
 @property(nonatomic, strong, readwrite) IBOutlet UISwitch *zipOnlyNumericSwitch;
+@property(nonatomic, strong, readwrite) IBOutlet UISwitch *frontCameraSwitch;
 @property(nonatomic, strong, readwrite) IBOutlet UISwitch *nameSwitch;
 @property(nonatomic, strong, readwrite) IBOutlet UILabel *outcomeLabel;
 @property(nonatomic, strong, readwrite) IBOutlet UIImageView *cardImageView;
@@ -87,6 +88,7 @@
   paymentVC.useCardIOLogo = self.useCardIOLogoSwitch.on;
   paymentVC.allowFreelyRotatingCardGuide = NO;
   paymentVC.scannedImageDuration = [self.scannedImageDurationField.text floatValue];
+  paymentVC.useFrontCamera = self.frontCameraSwitch.isOn;
 #if CARDIO_DEBUG
   paymentVC.doABTesting = self.doABTestingSwitch.on;
 #endif

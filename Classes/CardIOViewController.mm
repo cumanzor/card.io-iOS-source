@@ -53,6 +53,7 @@
 @property(nonatomic, assign, readwrite) BOOL                changeStatusBarHiddenStatus;
 @property(nonatomic, assign, readwrite) BOOL                newStatusBarHiddenStatus;
 @property(nonatomic, assign, readwrite) BOOL                statusBarWasOriginallyHidden;
+@property(nonatomic, assign, readwrite) BOOL                useFrontCamera;
 @property(nonatomic, strong, readwrite) UIButton           *cancelButton;
 @property(nonatomic, strong, readwrite) UIButton           *manualEntryButton;
 @property(nonatomic, assign, readwrite) UIDeviceOrientation deviceOrientation;
@@ -109,6 +110,8 @@
   self.cardIOView.scanOverlayView = self.context.scanOverlayView;
 
   self.cardIOView.detectionMode = self.context.detectionMode;
+  
+  self.cardIOView.useFrontCamera = self.context.useFrontCamera;
 
   [self.view addSubview:self.cardIOView];
 

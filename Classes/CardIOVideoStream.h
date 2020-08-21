@@ -23,6 +23,7 @@
   dmz_context *dmz;
 #endif
 }
+- (id)initWithFrontCamera:(BOOL)frontCamera;
 - (void)willAppear;
 - (void)willDisappear;
 

@@ -816,12 +816,13 @@
 		A50A54BE1BE2FEEC00B669FB /* CardIO_Framework_Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CardIO_Framework_Debug.xcconfig; path = build_configs/CardIO_Framework_Debug.xcconfig; sourceTree = "<group>"; };
 		A50A54BF1BE2FEEC00B669FB /* CardIO_Framework_Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CardIO_Framework_Release.xcconfig; path = build_configs/CardIO_Framework_Release.xcconfig; sourceTree = "<group>"; };
 		A50A54C01BE2FEEC00B669FB /* CardIO_Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CardIO_Framework.xcconfig; path = build_configs/CardIO_Framework.xcconfig; sourceTree = "<group>"; };
-		A553B7141BE32273006DF551 /* icc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A553B7141BE32273006DF551 /* card.io demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "card.io demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A553B7151BE32274006DF551 /* icc-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "icc-Framework-Info.plist"; path = "/Users/brluk/Code/card.io-iOS-source/icc-Framework-Info.plist"; sourceTree = "<absolute>"; };
 		A553B71A1BE32664006DF551 /* icc_Static_Library_AdHoc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = icc_Static_Library_AdHoc.xcconfig; path = build_configs/icc_Static_Library_AdHoc.xcconfig; sourceTree = "<group>"; };
 		A553B71B1BE32664006DF551 /* icc_Static_Library_Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = icc_Static_Library_Debug.xcconfig; path = build_configs/icc_Static_Library_Debug.xcconfig; sourceTree = "<group>"; };
 		A553B71C1BE32664006DF551 /* icc_Static_Library_Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = icc_Static_Library_Release.xcconfig; path = build_configs/icc_Static_Library_Release.xcconfig; sourceTree = "<group>"; };
 		A553B71D1BE32664006DF551 /* icc_Static_Library.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = icc_Static_Library.xcconfig; path = build_configs/icc_Static_Library.xcconfig; sourceTree = "<group>"; };
+		B168C23624EF1FA500622D58 /* icc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = icc.entitlements; sourceTree = "<group>"; };
 		B55FAACD1610F3B20042B9FB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B55FAACE1610F3B20042B9FB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B55FAACF1610F3B20042B9FB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -1790,7 +1791,7 @@
 				3E9F4C49181F03F300F33B48 /* libCardIO.a */,
 				3E9F4C7F181F07B700F33B48 /* icc-static.app */,
 				92263D701B83ACBB003FE678 /* CardIO.framework */,
-				A553B7141BE32273006DF551 /* icc.app */,
+				A553B7141BE32273006DF551 /* card.io demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1798,6 +1799,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B168C23624EF1FA500622D58 /* icc.entitlements */,
 				030735D6134148FE00663C26 /* Public API */,
 				0305C57D1345258200A315B7 /* Core */,
 				080E96DDFE201D6D7F000001 /* Scan */,
@@ -2153,7 +2155,7 @@
 			);
 			name = icc;
 			productName = icc;
-			productReference = A553B7141BE32273006DF551 /* icc.app */;
+			productReference = A553B7141BE32273006DF551 /* card.io demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2169,6 +2171,9 @@
 					};
 					92263D6F1B83ACBB003FE678 = {
 						CreatedOnToolsVersion = 7.0;
+					};
+					A553B6E51BE32273006DF551 = {
+						DevelopmentTeam = QKMLS48255;
 					};
 				};
 			};
@@ -2560,6 +2565,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A553B71B1BE32664006DF551 /* icc_Static_Library_Debug.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.fork.iccstatic;
 			};
 			name = Debug;
 		};
@@ -2567,6 +2573,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A553B71C1BE32664006DF551 /* icc_Static_Library_Release.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.fork.iccstatic;
 			};
 			name = Release;
 		};
@@ -2574,6 +2581,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A553B71C1BE32664006DF551 /* icc_Static_Library_Release.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.fork.iccstatic;
 			};
 			name = AdHoc;
 		};
@@ -2581,6 +2589,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54BE1BE2FEEC00B669FB /* CardIO_Framework_Debug.xcconfig */;
 			buildSettings = {
+				MARKETING_VERSION = 2.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.fork.cardio;
 			};
 			name = Debug;
 		};
@@ -2588,6 +2598,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54BF1BE2FEEC00B669FB /* CardIO_Framework_Release.xcconfig */;
 			buildSettings = {
+				MARKETING_VERSION = 2.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.fork.cardio;
 			};
 			name = Release;
 		};
@@ -2595,6 +2607,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54BD1BE2FEEC00B669FB /* CardIO_Framework_Adhoc.xcconfig */;
 			buildSettings = {
+				MARKETING_VERSION = 2.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.fork.cardio;
 			};
 			name = AdHoc;
 		};
@@ -2602,6 +2616,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54B41BE2F7A800B669FB /* icc_Debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = icc.entitlements;
+				CURRENT_PROJECT_VERSION = 2.5;
+				DEVELOPMENT_TEAM = QKMLS48255;
+				MARKETING_VERSION = 2.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.TSCardIO;
+				PRODUCT_NAME = "card.io demo";
 			};
 			name = Debug;
 		};
@@ -2609,6 +2629,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54B51BE2F7A800B669FB /* icc_Release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = icc.entitlements;
+				CURRENT_PROJECT_VERSION = 2.5;
+				DEVELOPMENT_TEAM = QKMLS48255;
+				MARKETING_VERSION = 2.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.TSCardIO;
+				PRODUCT_NAME = "card.io demo";
 			};
 			name = Release;
 		};
@@ -2616,6 +2642,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54B31BE2F7A800B669FB /* icc_AdHoc.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = icc.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.5;
+				DEVELOPMENT_TEAM = QKMLS48255;
+				MARKETING_VERSION = 2.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketsauce.TSCardIOA;
+				PRODUCT_NAME = "card.io demo";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = AdHoc;
 		};
