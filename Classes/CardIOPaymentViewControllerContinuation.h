@@ -25,8 +25,6 @@
 
 @property(nonatomic, strong, readwrite) UIImageView *obfuscatingView;
 
-@property(nonatomic, assign, readwrite) BOOL useFrontCamera;
-
 #if CARDIO_DEBUG
 @property(nonatomic, assign, readwrite) BOOL doABTesting;
 #endif

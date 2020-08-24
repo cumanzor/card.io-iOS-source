@@ -151,6 +151,9 @@
 ///       you should first check [CardIOUtilities canReadCardWithCamera] before initing the view controller.
 @property(nonatomic, assign, readwrite) BOOL disableManualEntryButtons;
 
+/// Set to YES to use the front camera.
+@property(nonatomic, assign, readwrite) BOOL useFrontCamera;
+
 /// Access to the delegate.
 @property(nonatomic, weak, readwrite) id<CardIOPaymentViewControllerDelegate> paymentDelegate;
 
