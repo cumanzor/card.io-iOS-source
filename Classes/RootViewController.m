@@ -28,6 +28,7 @@
 @property(nonatomic, strong, readwrite) IBOutlet UISwitch *zipSwitch;
 @property(nonatomic, strong, readwrite) IBOutlet UISwitch *zipOnlyNumericSwitch;
 @property(nonatomic, strong, readwrite) IBOutlet UISwitch *frontCameraSwitch;
+@property(nonatomic, strong, readwrite) IBOutlet UISwitch *timeoutSwitch;
 @property(nonatomic, strong, readwrite) IBOutlet UISwitch *nameSwitch;
 @property(nonatomic, strong, readwrite) IBOutlet UILabel *outcomeLabel;
 @property(nonatomic, strong, readwrite) IBOutlet UIImageView *cardImageView;
@@ -89,6 +90,8 @@
   paymentVC.allowFreelyRotatingCardGuide = NO;
   paymentVC.scannedImageDuration = [self.scannedImageDurationField.text floatValue];
   paymentVC.useFrontCamera = self.frontCameraSwitch.isOn;
+  paymentVC.timeoutEnabled = self.timeoutSwitch.isOn;
+  paymentVC.timeoutInSeconds = 10;
 #if CARDIO_DEBUG
   paymentVC.doABTesting = self.doABTestingSwitch.on;
 #endif

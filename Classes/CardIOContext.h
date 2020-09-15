@@ -50,5 +50,7 @@
 
 @property(nonatomic, assign, readwrite) BOOL scanExpiry;
 @property(nonatomic, assign, readwrite) BOOL useFrontCamera;
+@property(nonatomic, assign, readwrite) BOOL timeoutEnabled;
+@property(nonatomic) int timeoutInSeconds;
 
 @end

@@ -433,6 +433,8 @@ CONTEXT_PASSTHROUGH_READWRITE(UIView *, scanOverlayView, ScanOverlayView)
 CONTEXT_PASSTHROUGH_READWRITE(CardIODetectionMode, detectionMode, DetectionMode)
 
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, useFrontCamera, UseFrontCamera)
+CONTEXT_PASSTHROUGH_READWRITE(BOOL, timeoutEnabled, TimeoutEnabled)
+CONTEXT_PASSTHROUGH_READWRITE(int, timeoutInSeconds, TimeoutInSeconds)
 
 #if CARDIO_DEBUG
 CONTEXT_PASSTHROUGH_READWRITE(BOOL, doABTesting, DoABTesting)

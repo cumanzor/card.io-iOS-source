@@ -59,6 +59,7 @@
 @property(nonatomic, assign, readwrite) UIDeviceOrientation deviceOrientation;
 @property(nonatomic, assign, readwrite) CGSize              cancelButtonFrameSize;
 @property(nonatomic, assign, readwrite) CGSize              manualEntryButtonFrameSize;
+@property(nonatomic, strong)            NSTimer             *manualInputTimer;
 
 @end
 
@@ -89,6 +90,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
   self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
   self.view.backgroundColor = [UIColor colorWithWhite:0.15f alpha:1.0f];
@@ -179,6 +181,9 @@
   [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 
   [self didReceiveDeviceOrientationNotification:nil];
+  
+  // Set up the manual entry timer
+  [self startTimer];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -203,6 +208,7 @@
       [self setNeedsStatusBarAppearanceUpdate];
     }
   }
+  [self.manualInputTimer invalidate];
   [super viewWillDisappear:animated];
 }
 
@@ -480,6 +486,43 @@
   [root.paymentDelegate userDidCancelPaymentViewController:root];
 }
 
+#pragma mark - Manual Entry Helper Methods
+
+- (void)startTimer{
+  if (self.context.timeoutEnabled) {
+    [self.manualInputTimer invalidate];
+    if (self.context.timeoutInSeconds == 0) {
+      //set a default value of 30 seconds
+      self.context.timeoutInSeconds = 30;
+    }
+    self.manualInputTimer = [NSTimer scheduledTimerWithTimeInterval:self.context.timeoutInSeconds
+                                                             target:self
+                                                           selector:@selector(showManualEntryPrompt:)
+                                                           userInfo:nil
+                                                            repeats:NO];
+  }
+}
+
+- (void)showManualEntryPrompt:(id)sender {
+  UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Yes, enter data manually."
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction * _Nonnull action) {
+    [self manualEntry:sender];
+  }];
+  
+  UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"No, keep trying."
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+    [self startTimer];
+  }];
+  
+  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Need Help?"
+                                                                 message:@"If you are having issues scanning your card, you can also try manual entry."
+                                                          preferredStyle:UIAlertControllerStyleAlert];
+  [alert addAction:yesAction];
+  [alert addAction:noAction];
+  [self presentViewController:alert animated:YES completion:nil];
+}
 
 #pragma mark - CardIOViewDelegate method
 

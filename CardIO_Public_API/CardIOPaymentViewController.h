@@ -154,6 +154,12 @@
 /// Set to YES to use the front camera.
 @property(nonatomic, assign, readwrite) BOOL useFrontCamera;
 
+/// Set to YES to enable a timed prompt to enter manual entry mode.
+@property(nonatomic, assign, readwrite) BOOL timeoutEnabled;
+
+/// Number of seconds to wait until we display the manual entry prompt.
+@property(nonatomic) int timeoutInSeconds;
+
 /// Access to the delegate.
 @property(nonatomic, weak, readwrite) id<CardIOPaymentViewControllerDelegate> paymentDelegate;
 
