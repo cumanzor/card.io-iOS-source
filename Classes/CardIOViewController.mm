@@ -623,3 +623,10 @@
 @end
 
 #endif //USE_CAMERA || SIMULATE_CAMERA
+
+@implementation UIAlertController(custom)
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+  return UIInterfaceOrientationMaskAll;
+}
+@end
